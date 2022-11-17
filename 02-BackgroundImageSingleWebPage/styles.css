@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+div {
+    color: #fff;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+h1 {
+    font-size: 50px;
+    z-index: 1;
+}
+
+.img-par {
+    min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    border: 1px solid red;
+}
+
+.img1 {
+    background-image: url(./assets/images/big.jpeg);
+    
+}
+
+.img2 {
+    background-image: url(./assets/images/big.jpeg);
+}
+
+.color-overlay {
+    background: linear-gradient(to top right, blue, red);
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.img3 {
+    background-image: url(./assets/images/folder-img.jpeg);
+}
+
+.gradient {
+    background: linear-gradient(to top right, blue, red);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
