@@ -1,0 +1,92 @@
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    gap: 20px;
+}
+
+.name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.leftBox {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 100vh;
+    gap:20px;
+}
+
+.leftBoxHeader {
+    display: flex;
+    gap: 20px;
+}
+
+.bigBox {
+    background-color: #225CC7;
+    width: 25vw;
+    height: 22.7vw;
+    border-radius: 10px;
+}
+
+.leftBoxFooter {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pricing {
+    width: 50vw;
+    height: 22vh;
+    background-color: #225CC7;
+    border-radius: 10px;
+}
+
+.leftBoxBottom {
+    display: flex;
+    gap: 20px;
+}
+
+.box {
+    width: 16vw;
+    height: 22vh;
+    background-color: #225CC7;
+    border-radius: 10px;
+}
+
+.rightBoxHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.projects {
+    width: 50.5vw;
+    height: 22vh;
+    background-color: #225CC7;
+    border-radius: 10px;
+}
+
+.rightBoxTop {
+    display: flex;
+    gap: 20px;
+}
+
+.rightBoxFooter {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.events {
+    background-color: #225CC7;
+    border-radius: 10px;
+    height: 46.7vh;
+}
+
+@media screen and (992 < width < 1200) {
+    
+}
