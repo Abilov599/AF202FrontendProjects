@@ -18,9 +18,9 @@ let createToDo = function () {
     <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
   </div>`;
 
-    let custumP = document.createElement("p");
-    custumP.className = "customP mb-0";
-    custumP.innerText = search.value;
+    let customP = document.createElement("p");
+    customP.className = "customP mb-0";
+    customP.innerText = search.value;
     search.value = "";
 
     let divBtn = document.createElement("div");
@@ -39,7 +39,7 @@ let createToDo = function () {
     btnDelete.innerText = "Delete";
     divBtn.appendChild(btnDelete);
 
-    divTask.appendChild(custumP);
+    divTask.appendChild(customP);
     divTask.appendChild(divBtn);
     box.appendChild(divTask);
 
@@ -51,7 +51,14 @@ let createToDo = function () {
       this.closest("div").parentNode.remove();
     });
 
-    btnEdit.addEventListener("click", function () {});
+    btnEdit.addEventListener("click", function () {
+      search.value = this.parentNode.parentNode.children[1].innerText;
+      addBtn.addEventListener("click", function () {
+        customP.parentNode.remove();
+        createToDo();
+        this.customP.innerText = search.value;
+      });
+    });
   }
 };
 
@@ -84,11 +91,3 @@ let resetFunk = function () {
 };
 
 resetBtn.addEventListener("click", resetFunk);
-
-////// RESET BY PRESSING SPACEBAR! //////
-
-window.addEventListener("keypress", function (e) {
-  if (e.keyCode === 32) {
-    resetFunk();
-  }
-});
