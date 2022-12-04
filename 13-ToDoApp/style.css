@@ -1,0 +1,47 @@
+.container {
+  background-color: whitesmoke;
+  width: 500px;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(255, 187, 0);
+}
+input {
+  width: 250px;
+  height: 40px;
+  border-radius: 5px;
+}
+.box {
+  width: 100%;
+}
+.taskDiv {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.input-group-text {
+  padding: 0.375rem 0.375rem;
+}
+
+.customP {
+  display: flex;
+  flex: auto;
+  padding-left: 10px;
+}
+
+.resDiv {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.resMes {
+  margin: 0;
+  color: red;
+}
