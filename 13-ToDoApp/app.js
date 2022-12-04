@@ -57,6 +57,14 @@ let createToDo = function () {
         customP.parentNode.remove();
         createToDo();
         this.customP.innerText = search.value;
+
+        // window.addEventListener("keypress", function (e) {
+        //   if (e.keyCode === 13) {
+        //     console.log(customP.parentNode.remove());
+        //     createToDo();
+        //     this.customP.innerText = search.value;
+        //   }
+        // });
       });
     });
   }

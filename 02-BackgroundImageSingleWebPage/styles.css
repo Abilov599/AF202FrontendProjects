@@ -27,7 +27,6 @@ h1 {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed;
     border: 1px solid red;
 }
 
@@ -38,6 +37,7 @@ h1 {
 
 .img2 {
     background-image: url(./assets/images/big.jpeg);
+    background-attachment: fixed;
 }
 
 .color-overlay {
@@ -50,6 +50,7 @@ h1 {
 
 .img3 {
     background-image: url(./assets/images/folder-img.jpeg);
+    background-attachment: fixed;
 }
 
 .gradient {
