@@ -26,22 +26,35 @@ let createToDo = function () {
     let divBtn = document.createElement("div");
     divBtn.className = "div";
 
+    let extraBtn = document.createElement("button");
+    extraBtn.className = "btn btn-secondary";
+    extraBtn.innerText = "Extra";
+    divBtn.appendChild(extraBtn);
+
     // divBtn.innerHTML = `<button class="btn btn-warning me-2" id="edit">Edit</button>
     // <button class="btn btn-danger" id="delete">Delete</button>`;
 
     let btnEdit = document.createElement("button");
     btnEdit.className = "btn btn-warning me-2";
     btnEdit.innerText = "Edit";
+    btnEdit.style.display = "none";
     divBtn.appendChild(btnEdit);
 
     let btnDelete = document.createElement("button");
     btnDelete.className = "btn btn-danger";
     btnDelete.innerText = "Delete";
+    btnDelete.style.display = "none";
     divBtn.appendChild(btnDelete);
 
     divTask.appendChild(customP);
     divTask.appendChild(divBtn);
     box.appendChild(divTask);
+
+    extraBtn.addEventListener("click", function () {
+      extraBtn.style.display = "none";
+      btnEdit.style.display = "inline";
+      btnDelete.style.display = "inline";
+    });
 
     // let btnEdit = document.querySelector("#edit");
     // let btnDelete = document.querySelector("#delete");
@@ -55,8 +68,8 @@ let createToDo = function () {
       search.value = this.parentNode.parentNode.children[1].innerText;
       addBtn.addEventListener("click", function () {
         customP.parentNode.remove();
-        createToDo();
         this.customP.innerText = search.value;
+        createToDo();
 
         // window.addEventListener("keypress", function (e) {
         //   if (e.keyCode === 13) {
