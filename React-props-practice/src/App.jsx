@@ -9,8 +9,7 @@ function App() {
   useEffect(() => {
     axios
       .get("https://jsonplaceholder.typicode.com/users")
-      .then((result) => result.data)
-      .then((data) => setArticles(data))
+      .then((result) => setArticles(result.data))
       .catch((err) => {
         console.log(err);
       });

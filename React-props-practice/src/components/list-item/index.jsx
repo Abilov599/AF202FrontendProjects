@@ -3,7 +3,7 @@ import React from "react";
 function ListItem({article}) {
   return (
     <div>
-      <p key={article.id}>{article.name}</p>
+      <p>{article.name}</p>
     </div>
   );
 }
