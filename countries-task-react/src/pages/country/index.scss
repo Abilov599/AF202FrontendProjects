@@ -65,4 +65,28 @@
       }
     }
   }
+  @media screen and (max-width: 768px) {
+    #country {
+      flex-direction: column;
+      align-self: center;
+      margin-left: 1.6rem;
+      margin-right: 1.6rem;
+
+      #flag {
+        width: 100%;
+      }
+      #country-info {
+        padding: 0;
+        #country-info-main {
+          flex-direction: column;
+          #country-info-left {
+            padding: 0;
+          }
+          #country-info-right {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
 }

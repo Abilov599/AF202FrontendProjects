@@ -2,7 +2,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   background-color: white;
   // border-bottom: 1px solid #e0e0e0;
   span {
@@ -24,24 +23,20 @@ nav {
     }
   }
   @media screen and (max-width: 768px) {
-    span {
+    #logo {
       margin-left: 1.6rem;
-      h1 {
-        font-size: 20px;
-      }
     }
-    span {
+    #night-mode {
       margin-right: 1.6rem;
-      p {
-        font-size: 16px;
-      }
     }
   }
   @media screen and (max-width: 480px) {
     span {
       margin-left: 0.8rem;
+      padding: 20px 0;
       h1 {
-        font-size: 16px;
+        font-size: 14px;
+        padding: 0;
       }
     }
     span {

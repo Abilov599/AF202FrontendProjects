@@ -8,7 +8,7 @@ const SearchFilter = () => {
     <div id="search-filter">
       <span id="search">
         <i id="glass" className="fa-solid fa-magnifying-glass"></i>
-        <input placeholder="Search for a country…" />
+        <input placeholder="Search for a country…" onChange={() => {}} />
       </span>
       <span id="Regions">
         <Menu>
