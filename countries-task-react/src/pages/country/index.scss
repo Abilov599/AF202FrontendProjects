@@ -2,14 +2,17 @@
   max-width: 1440px;
   margin: 0 auto;
   background-color: white;
+  height: 100vh;
   #go-back {
     padding: 40px 80px;
     button {
       font-size: 16px;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
       i {
         margin-right: 1rem;
       }
-      padding: 8px 20px;
+      padding: 8px 25px;
     }
   }
   #country {
@@ -20,6 +23,7 @@
       width: 50%;
       img {
         width: 100%;
+        border-radius: 10px;
       }
     }
     #country-info {

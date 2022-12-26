@@ -4,7 +4,7 @@ nav {
   align-items: center;
   width: 100%;
   background-color: white;
-  border-bottom: 1px solid #e0e0e079;
+  // border-bottom: 1px solid #e0e0e0;
   span {
     margin-left: 3.2rem;
     h1 {
@@ -21,6 +21,34 @@ nav {
       }
       font-size: 20px;
       padding: 20px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    span {
+      margin-left: 1.6rem;
+      h1 {
+        font-size: 20px;
+      }
+    }
+    span {
+      margin-right: 1.6rem;
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+  @media screen and (max-width: 480px) {
+    span {
+      margin-left: 0.8rem;
+      h1 {
+        font-size: 16px;
+      }
+    }
+    span {
+      margin-right: 0.8rem;
+      p {
+        font-size: 12px;
+      }
     }
   }
 }
