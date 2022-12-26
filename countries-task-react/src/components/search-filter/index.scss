@@ -1,0 +1,24 @@
+#search-filter {
+    padding: 30px 110px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #F2F2F2;
+    #search {
+        display: flex;
+        position: relative;
+        #glass{  padding-left: 18px;
+            align-self: center;
+            position: absolute;
+        }
+        input {
+            padding: 10px 0px 10px 50px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            width: 300px;
+        }
+    }
+    #Regions {
+        display: flex;
+        margin-left: 30px;
+    }
+}

@@ -5,8 +5,8 @@ import AllCountries from "./pages/all-countries";
 function App() {
   return (
     <div className="App">
+      <Header />
       <ChakraProvider>
-        <Header />
         <AllCountries />
       </ChakraProvider>
     </div>

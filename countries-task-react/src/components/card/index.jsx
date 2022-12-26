@@ -2,33 +2,35 @@ import React from "react";
 import {
   Card,
   CardBody,
-  CardFooter,
   Stack,
-  Image,
   Heading,
   Text,
   Divider,
   Button,
 } from "@chakra-ui/react";
+import "./index.scss";
 
 const MyCard = ({ countrie }) => {
   return (
-    <Card maxW="sm">
+    <Card className="card" maxW="sm">
       <CardBody>
-        <Image src={`${countrie.flag}`} borderRadius="lg" />
+        <img
+          style={{ borderRadius: "8px", width: "260px", height: "180px" }}
+          src={`${countrie.flags.png}`}
+          alt={`${countrie.name}'s Flag`}
+        />
+
         <Stack mt="3" spacing="3">
           <Heading size="md">{`${countrie.name}`}</Heading>
           <Text>Population: {`${countrie.population}`}</Text>
-          <Text></Text>
-          <Text></Text>
+          <Text>Region: {`${countrie.region}`}</Text>
+          <Text>Capital: {`${countrie.capital}`}</Text>
         </Stack>
       </CardBody>
       <Divider />
-      <CardFooter>
-        <Button variant="ghost" colorScheme="blue">
-          Detais
-        </Button>
-      </CardFooter>
+      <Button variant="ghost" colorScheme="blue">
+        Detais
+      </Button>
     </Card>
   );
 };

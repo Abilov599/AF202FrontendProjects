@@ -14,9 +14,11 @@ const CountriesRow = () => {
     getData();
   }, []);
 
-  return countries.map((countrie, i) => {
-    return <MyCard key={i} countrie={countrie} />;
-  });
+  return countries
+    .filter((countrie) => countrie.name !== "Armenia")
+    .map((countrie, i) => {
+      return <MyCard key={i} countrie={countrie} />;
+    });
 };
 
 export default CountriesRow;
