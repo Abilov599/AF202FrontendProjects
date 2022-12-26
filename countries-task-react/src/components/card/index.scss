@@ -1,3 +1,12 @@
 .card {
     background-color: white !important;
+    a {
+        align-self: center;
+        padding: 8px 16px;
+        margin: 10px 0;
+        text-decoration: none;
+        color: #ffffff;
+        border-radius: 6px;
+        background-color: rgb(24, 106, 201);
+    }
 }

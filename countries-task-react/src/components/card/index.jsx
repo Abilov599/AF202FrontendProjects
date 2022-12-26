@@ -6,32 +6,31 @@ import {
   Heading,
   Text,
   Divider,
-  Button,
 } from "@chakra-ui/react";
 import "./index.scss";
+import { Link } from "react-router-dom";
 
-const MyCard = ({ countrie }) => {
+const MyCard = ({ country }) => {
   return (
-    <Card className="card" maxW="sm">
-      <CardBody>
-        <img
-          style={{ borderRadius: "8px", width: "260px", height: "180px" }}
-          src={`${countrie.flags.png}`}
-          alt={`${countrie.name}'s Flag`}
-        />
+    <Link to={`/country-detail/${country.name}`}>
+      <Card className="card" maxW="sm">
+        <CardBody>
+          <img
+            style={{ borderRadius: "8px", width: "260px", height: "180px" }}
+            src={`${country.flags.png}`}
+            alt={`${country.name}'s Flag`}
+          />
 
-        <Stack mt="3" spacing="3">
-          <Heading size="md">{`${countrie.name}`}</Heading>
-          <Text>Population: {`${countrie.population}`}</Text>
-          <Text>Region: {`${countrie.region}`}</Text>
-          <Text>Capital: {`${countrie.capital}`}</Text>
-        </Stack>
-      </CardBody>
-      <Divider />
-      <Button variant="ghost" colorScheme="blue">
-        Detais
-      </Button>
-    </Card>
+          <Stack mt="3" spacing="3">
+            <Heading size="md">{`${country.name}`}</Heading>
+            <Text>Population: {`${country.population}`}</Text>
+            <Text>Region: {`${country.region}`}</Text>
+            <Text>Capital: {`${country.capital}`}</Text>
+          </Stack>
+        </CardBody>
+        <Divider />
+      </Card>
+    </Link>
   );
 };
 
