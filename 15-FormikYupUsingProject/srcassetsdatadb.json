@@ -1,0 +1,55 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "user": [
+    {
+      "id": 1,
+      "email": "email@email.com",
+      "country": "Azerbaijan",
+      "password": "some password"
+    },
+    {
+      "email": "wezazyn@mailinator.com",
+      "password": "Expedita temporibus ",
+      "password2": "Duis omnis iusto hic",
+      "country": "Equatorial Guinea",
+      "id": 2
+    },
+    {
+      "email": "gecep@mailinator.com",
+      "password": "Libero aliquip asper",
+      "password2": "Quia dicta doloremqu",
+      "country": "Uzbekistan",
+      "id": 3
+    },
+    {
+      "email": "wykemec@mailinator.com",
+      "password": "In eu non odio sint",
+      "password2": "Quam quia maiores es",
+      "country": "Azerbaijan",
+      "id": 4
+    },
+    {
+      "email": "tilapiry@mailinator.com",
+      "password": "Quasi pariatur A ut",
+      "password2": "Corrupti quisquam d",
+      "country": "Azerbaijan",
+      "id": 5
+    }
+  ]
+}

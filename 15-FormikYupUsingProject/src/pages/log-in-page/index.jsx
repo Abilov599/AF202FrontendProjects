@@ -16,6 +16,8 @@ import {
 } from "@chakra-ui/react";
 import { FaUserAlt, FaLock } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useFormik } from "formik";
+import { userValidationSchema } from "../../components/schema";
 
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
@@ -24,6 +26,25 @@ const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleShowClick = () => setShowPassword(!showPassword);
+
+  const { handleSubmit, handleChange, values, errors, touched, resetForm } =
+    useFormik({
+      initialValues: {
+        // userName: "",
+        email: "",
+        password: "",
+        password2: "",
+        country: "",
+      },
+      validationSchema: userValidationSchema,
+      onSubmit: () => {
+        // let userObj = {
+        //   email: values.email,
+        //   password: values.password,
+        // };
+        resetForm();
+      },
+    });
 
   return (
     <Flex
@@ -43,7 +64,7 @@ const SignIn = () => {
         <Avatar bg="teal.500" />
         <Heading color="teal.400">Welcome</Heading>
         <Box minW={{ base: "90%", md: "468px" }}>
-          <form>
+          <form onSubmit={handleSubmit}>
             <Stack
               spacing={4}
               p="1rem"
@@ -56,8 +77,20 @@ const SignIn = () => {
                     pointerEvents="none"
                     children={<CFaUserAlt color="gray.300" />}
                   />
-                  <Input type="email" placeholder="email address" />
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    value={values.email}
+                    onChange={handleChange}
+                  />
                 </InputGroup>
+                {errors.email && touched.email && (
+                  <span style={{ color: "red", fontSize: "16px" }}>
+                    {errors.email}
+                  </span>
+                )}
               </FormControl>
               <FormControl>
                 <InputGroup>
@@ -67,8 +100,12 @@ const SignIn = () => {
                     children={<CFaLock color="gray.300" />}
                   />
                   <Input
+                    id="password"
+                    name="password"
                     type={showPassword ? "text" : "password"}
                     placeholder="Password"
+                    onChange={handleChange}
+                    value={values.password}
                   />
                   <InputRightElement width="4.5rem">
                     <Button h="1.75rem" size="sm" onClick={handleShowClick}>
@@ -76,18 +113,21 @@ const SignIn = () => {
                     </Button>
                   </InputRightElement>
                 </InputGroup>
+                {errors.password && touched.password && (
+                  <span style={{ color: "red", fontSize: "16px" }}>
+                    {errors.password}
+                  </span>
+                )}
               </FormControl>
-              <Link to="/users">
-                <Button
-                  borderRadius={0}
-                  type="submit"
-                  variant="solid"
-                  colorScheme="teal"
-                  width="full"
-                >
-                  Login
-                </Button>
-              </Link>
+              <Button
+                borderRadius={0}
+                type="submit"
+                variant="solid"
+                colorScheme="teal"
+                width="full"
+              >
+                Sign In
+              </Button>
             </Stack>
           </form>
         </Box>

@@ -1,0 +1,15 @@
+nav {
+    padding: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  ul {
+    display: flex;
+    gap: 2rem;
+    li {
+        background-color: teal;
+        padding: 8px;
+        border-radius: 5px;
+        color: white;
+    }
+  }
+}
