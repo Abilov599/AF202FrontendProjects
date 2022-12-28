@@ -157,7 +157,7 @@ const SignUpPage = () => {
                     // type={showPassword ? "text" : "password"}
                     placeholder="Password confirm"
                     onChange={handleChange}
-                    value={values.password2}
+                    value={(values.password2 = values.password)}
                   />
                   {/* <InputRightElement width="4.5rem">
                     <Button h="1.75rem" size="sm" onClick={handleShowClick}>
