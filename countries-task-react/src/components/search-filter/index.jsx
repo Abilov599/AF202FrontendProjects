@@ -29,33 +29,35 @@ const SearchFilter = () => {
   };
 
   return (
-    <div style={{ flexDirection: "column" }} id="search-filter">
-      <span id="search">
-        <i id="glass" className="fa-solid fa-magnifying-glass"></i>
-        <input
-          placeholder="Search for a country…"
-          onChange={(e) => handleSearch(e)}
-        />
-      </span>
-      <span id="Regions">
-        <Menu>
-          <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-            Filter by Region
-          </MenuButton>
-          <MenuList>
-            <MenuItem>All Regions</MenuItem>
-            <MenuItem>Africa</MenuItem>
-            <MenuItem>America</MenuItem>
-            <MenuItem>Asia</MenuItem>
-            <MenuItem>Europe</MenuItem>
-            <MenuItem>Oceania</MenuItem>
-          </MenuList>
-        </Menu>
-      </span>
+    <>
+      <div style={{ display: "flex" }} id="search-filter">
+        <span id="search">
+          <i id="glass" className="fa-solid fa-magnifying-glass"></i>
+          <input
+            placeholder="Search for a country…"
+            onChange={(e) => handleSearch(e)}
+          />
+        </span>
+        <span id="Regions">
+          <Menu>
+            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+              Filter by Region
+            </MenuButton>
+            <MenuList>
+              <MenuItem>All Regions</MenuItem>
+              <MenuItem>Africa</MenuItem>
+              <MenuItem>America</MenuItem>
+              <MenuItem>Asia</MenuItem>
+              <MenuItem>Europe</MenuItem>
+              <MenuItem>Oceania</MenuItem>
+            </MenuList>
+          </Menu>
+        </span>
+      </div>
       <div id="CountriesRow">
         <CountriesRow countries={countries} isLoaoding={isLoaoding} />
       </div>
-    </div>
+    </>
   );
 };
 
