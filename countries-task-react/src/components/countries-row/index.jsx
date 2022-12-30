@@ -1,22 +1,10 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import { getCountries } from "../../service/countries.service";
+// import { useEffect, useState } from "react";
+// import { getCountries } from "../../service/countries.service";
 import MyCard from "../card";
 import { Spinner } from "@chakra-ui/react";
 
-const CountriesRow = () => {
-  const [countries, setCountries] = useState([]);
-  const [isLoaoding, setIsLoaoding] = useState(true);
-
-  const getData = async () => {
-    setCountries(await getCountries());
-    setIsLoaoding(false);
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
+const CountriesRow = ({ countries, isLoaoding }) => {
   return (
     <>
       {isLoaoding ? (

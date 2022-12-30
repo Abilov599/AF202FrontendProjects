@@ -1,14 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./index.scss";
 import { Menu, MenuButton, MenuList, MenuItem, Button } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
+import CountriesRow from "../countries-row";
+import axios from "axios";
+import { getCountries } from "../../service/countries.service";
 
 const SearchFilter = () => {
+  const [countries, setCountries] = useState([]);
+  const [isLoaoding, setIsLoaoding] = useState(true);
+
+  const getData = async () => {
+    setCountries(await getCountries());
+    setIsLoaoding(false);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const handleSearch = (e) => {
+    axios("https://restcountries.com/v2/all").then((res) => {
+      let searchedCountries = res.data.filter((countrie) =>
+        countrie.name.includes(e.target.value)
+      );
+      setCountries(searchedCountries);
+    });
+  };
+
   return (
-    <div id="search-filter">
+    <div style={{ flexDirection: "column" }} id="search-filter">
       <span id="search">
         <i id="glass" className="fa-solid fa-magnifying-glass"></i>
-        <input placeholder="Search for a country…" onChange={() => {}} />
+        <input
+          placeholder="Search for a country…"
+          onChange={(e) => handleSearch(e)}
+        />
       </span>
       <span id="Regions">
         <Menu>
@@ -25,6 +52,9 @@ const SearchFilter = () => {
           </MenuList>
         </Menu>
       </span>
+      <div id="CountriesRow">
+        <CountriesRow countries={countries} isLoaoding={isLoaoding} />
+      </div>
     </div>
   );
 };

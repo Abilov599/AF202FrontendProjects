@@ -7,9 +7,9 @@ const AllCountries = () => {
   return (
     <>
       <SearchFilter />
-      <div id="CountriesRow">
+      {/* <div id="CountriesRow">
         <CountriesRow />
-      </div>
+      </div> */}
     </>
   );
 };
