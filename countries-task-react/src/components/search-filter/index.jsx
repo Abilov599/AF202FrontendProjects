@@ -24,7 +24,9 @@ const SearchFilter = () => {
     setIsLoaoding(true);
     axios("https://restcountries.com/v2/all").then((res) => {
       let searchedCountries = res.data.filter((countrie) =>
-        countrie.name.includes(e.target.value)
+        countrie.name
+          .toLocaleLowerCase()
+          .includes(e.target.value.toLocaleLowerCase())
       );
       setCountries(searchedCountries);
       setIsLoaoding(false);
