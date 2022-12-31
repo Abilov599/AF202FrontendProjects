@@ -11,6 +11,7 @@ const SearchFilter = () => {
   const [isLoaoding, setIsLoaoding] = useState(true);
 
   const getData = async () => {
+    setIsLoaoding(true);
     setCountries(await getCountries());
     setIsLoaoding(false);
   };
@@ -20,11 +21,24 @@ const SearchFilter = () => {
   }, []);
 
   const handleSearch = (e) => {
+    setIsLoaoding(true);
     axios("https://restcountries.com/v2/all").then((res) => {
       let searchedCountries = res.data.filter((countrie) =>
         countrie.name.includes(e.target.value)
       );
       setCountries(searchedCountries);
+      setIsLoaoding(false);
+    });
+  };
+
+  const handleFilter = (e) => {
+    setIsLoaoding(true);
+    axios("https://restcountries.com/v2/all").then((res) => {
+      const filterByRegion = res.data.filter((countrie) =>
+        countrie.region.includes(e.target.innerText)
+      );
+      setCountries(filterByRegion);
+      setIsLoaoding(false);
     });
   };
 
@@ -44,12 +58,24 @@ const SearchFilter = () => {
               Filter by Region
             </MenuButton>
             <MenuList>
-              <MenuItem>All Regions</MenuItem>
-              <MenuItem>Africa</MenuItem>
-              <MenuItem>America</MenuItem>
-              <MenuItem>Asia</MenuItem>
-              <MenuItem>Europe</MenuItem>
-              <MenuItem>Oceania</MenuItem>
+              <MenuItem closeOnSelect={false} onClick={getData}>
+                All Regions
+              </MenuItem>
+              <MenuItem closeOnSelect={false} onClick={(e) => handleFilter(e)}>
+                Africa
+              </MenuItem>
+              <MenuItem closeOnSelect={false} onClick={(e) => handleFilter(e)}>
+                America
+              </MenuItem>
+              <MenuItem closeOnSelect={false} onClick={(e) => handleFilter(e)}>
+                Asia
+              </MenuItem>
+              <MenuItem closeOnSelect={false} onClick={(e) => handleFilter(e)}>
+                Europe
+              </MenuItem>
+              <MenuItem closeOnSelect={false} onClick={(e) => handleFilter(e)}>
+                Oceania
+              </MenuItem>
             </MenuList>
           </Menu>
         </span>

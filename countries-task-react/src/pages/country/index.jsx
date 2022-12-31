@@ -16,8 +16,6 @@ const Country = () => {
     getData();
   }, []);
 
-  console.log(country);
-
   return (
     <div id="country-detail">
       <div id="go-back">
