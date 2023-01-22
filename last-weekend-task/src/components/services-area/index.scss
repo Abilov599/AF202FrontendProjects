@@ -1,0 +1,32 @@
+#services-area {
+  margin-top: -100px;
+  display: flex;
+  gap: 30px;
+  .card {
+    display: flex;
+    box-shadow: 0px 25px 60px rgb(66 85 164 / 6%);
+    padding: 29px 24px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    background: #fff;
+    .card-text {
+      padding-left: 19px;
+      h3 {
+        font-family: "Josefin Sans", sans-serif;
+        color: #4255a4;
+        margin-top: 0px;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 1.2;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+      p {
+        font-family: "Mulish", sans-serif;
+        font-size: 17px;
+        line-height: 1.5;
+        color: #4255a4;
+      }
+    }
+  }
+}
